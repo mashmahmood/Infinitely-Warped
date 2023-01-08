@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Hand_Throw.mp3-e96f7114d92821ad9c259b8aeec4d101.mp3str"
+
+[deps]
+
+source_file="res://src/Audios/Hand_Throw.mp3"
+dest_files=[ "res://.import/Hand_Throw.mp3-e96f7114d92821ad9c259b8aeec4d101.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

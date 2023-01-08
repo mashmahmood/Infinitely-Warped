@@ -1,0 +1,246 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://src/Sprites/slime-Sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/Actors/Enemy_Slime.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Attack"
+length = 0.75
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Die"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 17, 18, 19, 20 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Generate"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 19, 18, 17 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Hurt"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 13, 14, 15, 16 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Walk"
+length = 0.6
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 13.3333, 6.33333 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 8 )
+
+[sub_resource type="AnimationNodeAnimation" id=18]
+animation = "Attack"
+
+[sub_resource type="AnimationNodeAnimation" id=19]
+animation = "Die"
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Generate"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=22]
+animation = "Walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+switch_mode = 2
+auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachine" id=31]
+states/Attack/node = SubResource( 18 )
+states/Attack/position = Vector2( 730, 116 )
+states/Die/node = SubResource( 19 )
+states/Die/position = Vector2( 730, 215 )
+states/Generate/node = SubResource( 20 )
+states/Generate/position = Vector2( 356, 116 )
+states/Idle/node = SubResource( 21 )
+states/Idle/position = Vector2( 554, 215 )
+states/Walk/node = SubResource( 22 )
+states/Walk/position = Vector2( 554, 116 )
+transitions = [ "Generate", "Walk", SubResource( 23 ), "Walk", "Idle", SubResource( 24 ), "Idle", "Die", SubResource( 25 ), "Walk", "Die", SubResource( 26 ), "Idle", "Walk", SubResource( 27 ), "Idle", "Attack", SubResource( 28 ), "Walk", "Attack", SubResource( 29 ), "Attack", "Idle", SubResource( 30 ), "Die", "Generate", SubResource( 34 ) ]
+start_node = "Generate"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 170.667, 31.6667 )
+
+[node name="Slime" type="KinematicBody2D"]
+scale = Vector2( 3, 3 )
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 2 )
+speed = 100.0
+attack_speed = 150.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -12 )
+texture = ExtResource( 1 )
+hframes = 8
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 1 )
+anims/Die = SubResource( 2 )
+anims/Generate = SubResource( 8 )
+anims/Hurt = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Walk = SubResource( 6 )
+
+[node name="PlayerHandDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHandDetector"]
+position = Vector2( 0, -7 )
+shape = SubResource( 33 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 7 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 31 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 17 )
+
+[node name="PlayerRangeDetector" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRangeDetector"]
+position = Vector2( 0, -32.3333 )
+shape = SubResource( 32 )
+
+[connection signal="body_entered" from="PlayerHandDetector" to="." method="_on_PlayerHandDetector_body_entered"]
+[connection signal="body_exited" from="PlayerHandDetector" to="." method="_on_PlayerHandDetector_body_exited"]
+[connection signal="body_entered" from="PlayerRangeDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerRangeDetector" to="." method="_on_PlayerDetector_body_exited"]

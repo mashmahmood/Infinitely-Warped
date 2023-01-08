@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Interface.mp3-b0cba4d73de6a1696a5c3c3ba93326e7.mp3str"
+
+[deps]
+
+source_file="res://src/Audios/Interface.mp3"
+dest_files=[ "res://.import/Interface.mp3-b0cba4d73de6a1696a5c3c3ba93326e7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
